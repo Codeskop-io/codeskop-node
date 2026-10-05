@@ -20,7 +20,7 @@ async function start(options: codeskop.Options = {}) {
 
 beforeEach(async () => {
   ingest = await new MockIngest().start();
-  upstream = await new MockIngest().start();
+  upstream = await new MockIngest().start("::");
   upstream.routes["/v1/charges/err"] = [502, { detail: "bad gateway" }];
 });
 

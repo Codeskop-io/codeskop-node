@@ -47,8 +47,9 @@ export class MockIngest {
     });
   }
 
-  async start(): Promise<this> {
-    await new Promise<void>((r) => this.server.listen(0, "127.0.0.1", () => r()));
+  /** `host: "::"` listens dual-stack, so "localhost" works whether it resolves to ::1 or 127.0.0.1. */
+  async start(host = "127.0.0.1"): Promise<this> {
+    await new Promise<void>((r) => this.server.listen(0, host, () => r()));
     const addr = this.server.address();
     this.url = `http://127.0.0.1:${typeof addr === "object" && addr ? addr.port : 0}`;
     return this;
