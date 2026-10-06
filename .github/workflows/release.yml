@@ -1,7 +1,8 @@
 name: Release
 # Push a tag vX.Y.Z (matching package.json and src/version.ts) to publish @codeskop/node to npm.
-# Uses npm Trusted Publishing (OIDC): no token. The trusted publisher on npmjs.com is
-# Codeskop-io/codeskop-node, workflow release.yml. Needs npm >= 11.5.1.
+# Authenticates with npm Trusted Publishing (OIDC) when the trusted publisher
+# (Codeskop-io/codeskop-node, release.yml) is set on npmjs.com, otherwise with the
+# NPM_TOKEN secret. Needs npm >= 11.5.1 for OIDC; the repo must be public for provenance.
 on:
   push:
     tags: ["v*"]
@@ -27,4 +28,6 @@ jobs:
       - run: npm run typecheck
       - run: npm run build
       - run: npm test
-      - run: npm publish --access public  # trusted publishing adds provenance automatically
+      - run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
