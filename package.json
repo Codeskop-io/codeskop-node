@@ -1,6 +1,6 @@
 {
   "name": "@codeskop/node",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Codeskop server SDK for Node.js: errors, incoming requests and outgoing API calls from Express, Fastify and Next.js.",
   "license": "MIT",
   "type": "module",
@@ -46,7 +46,7 @@
   "bugs": {
     "url": "https://github.com/Codeskop-io/codeskop-node/issues"
   },
-  "author": "Codeskop <plinqdevelopers@gmail.com>",
+  "author": "Codeskop <support@codeskop.com>",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
