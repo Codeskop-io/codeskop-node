@@ -38,7 +38,7 @@
     "nextjs",
     "codeskop"
   ],
-  "homepage": "https://www.codeskop.com/docs/server/node",
+  "homepage": "https://www.codeskop.com",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Codeskop-io/codeskop-node.git"
