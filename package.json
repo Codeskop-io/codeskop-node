@@ -1,6 +1,6 @@
 {
   "name": "@codeskop/node",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Codeskop server SDK for Node.js: errors, incoming requests and outgoing API calls from Express, Fastify and Next.js.",
   "license": "MIT",
   "type": "module",
